@@ -1,7 +1,7 @@
 {
 	"name": "com.mk.mkmagictoolkit",
 	"version": "1.0.0",
-	"displayName": "MK Magic Toolkit_CustomDebug",
+	"displayName": "MK Magic Toolkit",
 	"description": "이 패키지는 개발 템플릿을 제공합니다.\n\n[ 제공하는 기능 ]\n\n\t① CustomDeubg : 유니티 빌드시 로그를 포함하지 않는 기능을 제공합니다.",
 	"unity": "2019.1",
 	"dependencies": {},
