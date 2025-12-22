@@ -21,7 +21,6 @@ namespace MKMagicToolkit.Editors
 
     public class MKMagicToolkitVscUserSnippetInstaller : EditorWindow
     {
-        private const string PackageName = "com.mkmagictoolkit";
         private const string SnippetsRelDir = "Editor/Snippets";
         private const string VsSourceRelPath = SnippetsRelDir + "/CustomDebugSnippet_VS.snippet";
         private const string VscSourceRelPath = SnippetsRelDir + "/CustomDebugSnippets_VSC.code-snippets";
@@ -185,13 +184,6 @@ namespace MKMagicToolkit.Editors
 
             var destFile = Path.Combine(_userSnippetsDir, installFileName);
 
-            if (!EditorUtility.DisplayDialog(
-                    "MKMagicToolkit",
-                    "스니펫 파일을 설치(복사/덮어쓰기)할까요?\n\nFrom:\n" + sourcePath + "\n\nTo:\n" + destFile,
-                    "Install",
-                    "Cancel"))
-                return;
-
             File.Copy(sourcePath, destFile, true);
 
             EditorUtility.DisplayDialog("MKMagicToolkit", "Installed:\n" + destFile, "OK");
@@ -216,13 +208,6 @@ namespace MKMagicToolkit.Editors
                 EditorUtility.DisplayDialog("MKMagicToolkit", "No file to remove:\n" + destFile, "OK");
                 return;
             }
-
-            if (!EditorUtility.DisplayDialog(
-                    "MKMagicToolkit",
-                    "스니펫 파일을 삭제할까요?\n\n" + destFile,
-                    "Remove",
-                    "Cancel"))
-                return;
 
             File.Delete(destFile);
             EditorUtility.DisplayDialog("MKMagicToolkit", "Removed:\n" + destFile, "OK");
@@ -255,12 +240,13 @@ namespace MKMagicToolkit.Editors
                 return null;
             }
 
-            var pkgJson = $"Packages/{PackageName}/package.json";
-            var info = UnityEditor.PackageManager.PackageInfo.FindForAssetPath(pkgJson);
+            var script = MonoScript.FromScriptableObject(this);
+            var scriptPath = AssetDatabase.GetAssetPath(script);
 
+            var info = UnityEditor.PackageManager.PackageInfo.FindForAssetPath(scriptPath);
             if (info == null || string.IsNullOrEmpty(info.resolvedPath))
             {
-                Debug.LogError("ResolveSourcePathInPackage: PackageInfo not found for " + pkgJson);
+                Debug.LogError("ResolveSourcePathInPackage: PackageInfo not found for scriptPath = " + scriptPath);
                 return null;
             }
 
@@ -305,20 +291,20 @@ namespace MKMagicToolkit.Editors
                 "아래 버튼을 눌러 패키지 내 Rider 스니펫 폴더로 이동한 뒤, 사용자가 Rider에서 수동 설치하세요.",
                 MessageType.Info);
 
-            var absDir = ResolveSourcePathInPackage(SnippetsRelDir);
+            var snippetsAbsDir = ResolveSourcePathInPackage(SnippetsRelDir);
 
-            EditorGUILayout.LabelField("Package Snippets Folder", EditorStyles.miniBoldLabel);
-            EditorGUILayout.SelectableLabel(absDir ?? "(not resolved)", GUILayout.Height(18));
+            EditorGUILayout.LabelField("Package Rider Snippets Folder", EditorStyles.miniBoldLabel);
+            EditorGUILayout.SelectableLabel(snippetsAbsDir ?? "(not resolved)", GUILayout.Height(18));
 
-            if (GUILayout.Button("Open package Snippets folder", GUILayout.Height(30)))
+            if (GUILayout.Button("Open package Rider snippets folder", GUILayout.Height(30)))
             {
-                if (string.IsNullOrEmpty(absDir) || !Directory.Exists(absDir))
+                if (string.IsNullOrEmpty(snippetsAbsDir) || !Directory.Exists(snippetsAbsDir))
                 {
-                    EditorUtility.DisplayDialog("MKMagicToolkit", "폴더를 찾지 못했습니다:\n\n" + absDir, "OK");
+                    EditorUtility.DisplayDialog("MKMagicToolkit", "폴더를 찾지 못했습니다:\n\n" + snippetsAbsDir, "OK");
                     return;
                 }
 
-                EditorUtility.RevealInFinder(absDir);
+                EditorUtility.OpenWithDefaultApp(snippetsAbsDir);
             }
         }
     }
