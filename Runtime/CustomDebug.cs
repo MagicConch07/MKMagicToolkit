@@ -1,4 +1,3 @@
-using UnityEngine;
 using System.Diagnostics;
 
 namespace MKMagicToolkit.Utility
@@ -15,7 +14,7 @@ namespace MKMagicToolkit.Utility
         }
 
         [Conditional("UNITY_ASSERTIONS")]
-        public static void Log(object message, Object context)
+        public static void Log(object message, UnityEngine.Object context)
         {
             UnityEngine.Debug.Log(message, context);
         }
@@ -27,7 +26,7 @@ namespace MKMagicToolkit.Utility
         }
 
         [Conditional("UNITY_ASSERTIONS")]
-        public static void LogWarning(object message, Object context)
+        public static void LogWarning(object message, UnityEngine.Object context)
         {
             UnityEngine.Debug.LogWarning(message, context);
         }
@@ -39,7 +38,7 @@ namespace MKMagicToolkit.Utility
         }
 
         [Conditional("UNITY_ASSERTIONS")]
-        public static void LogError(object message, Object context)
+        public static void LogError(object message, UnityEngine.Object context)
         {
             UnityEngine.Debug.LogError(message, context);
         }

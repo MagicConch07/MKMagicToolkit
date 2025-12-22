@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!-- 0) cd  => CustomDebug (cursor right after CustomDebug) -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>MKMagicToolkit - CustomDebug</Title>
+			<Author>MKMagicToolkit</Author>
+			<Description>Insert CustomDebug</Description>
+			<Shortcut>cd</Shortcut>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp"><![CDATA[CustomDebug$end$]]></Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<!-- 1) clog  => CustomDebug.Log(message); -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>MKMagicToolkit - CustomDebug.Log</Title>
+			<Author>MKMagicToolkit</Author>
+			<Description>Insert CustomDebug.Log(message);</Description>
+			<Shortcut>clog</Shortcut>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="true">
+					<ID>msg</ID>
+					<ToolTip>Message to log</ToolTip>
+					<Default>message</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp"><![CDATA[CustomDebug.Log("$msg$");$end$]]></Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<!-- 1.1) cl  => CustomDebug.Log(message); -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>MKMagicToolkit - CustomDebug.Log</Title>
+			<Author>MKMagicToolkit</Author>
+			<Description>Insert CustomDebug.Log(message);</Description>
+			<Shortcut>cl</Shortcut>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="true">
+					<ID>msg</ID>
+					<ToolTip>Message to log</ToolTip>
+					<Default>message</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp"><![CDATA[CustomDebug.Log("$msg$");$end$]]></Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<!-- 2) clogw => CustomDebug.LogWarning(message); -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>MKMagicToolkit - CustomDebug.LogWarning</Title>
+			<Author>MKMagicToolkit</Author>
+			<Description>Insert CustomDebug.LogWarning(message);</Description>
+			<Shortcut>clogw</Shortcut>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="true">
+					<ID>msg</ID>
+					<ToolTip>Message to log (warning)</ToolTip>
+					<Default>message</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp"><![CDATA[CustomDebug.LogWarning("$msg$");$end$]]></Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<!-- 2.1) clw => CustomDebug.LogWarning(message); -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>MKMagicToolkit - CustomDebug.LogWarning</Title>
+			<Author>MKMagicToolkit</Author>
+			<Description>Insert CustomDebug.LogWarning(message);</Description>
+			<Shortcut>clw</Shortcut>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="true">
+					<ID>msg</ID>
+					<ToolTip>Message to log (warning)</ToolTip>
+					<Default>message</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp"><![CDATA[CustomDebug.LogWarning("$msg$");$end$]]></Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<!-- 3) cloge => CustomDebug.LogError(message); -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>MKMagicToolkit - CustomDebug.LogError</Title>
+			<Author>MKMagicToolkit</Author>
+			<Description>Insert CustomDebug.LogError(message);</Description>
+			<Shortcut>cloge</Shortcut>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="true">
+					<ID>msg</ID>
+					<ToolTip>Message to log (error)</ToolTip>
+					<Default>message</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp"><![CDATA[CustomDebug.LogError("$msg$");$end$]]></Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<!-- 3.1) cle => CustomDebug.LogError(message); -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>MKMagicToolkit - CustomDebug.LogError</Title>
+			<Author>MKMagicToolkit</Author>
+			<Description>Insert CustomDebug.LogError(message);</Description>
+			<Shortcut>cle</Shortcut>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="true">
+					<ID>msg</ID>
+					<ToolTip>Message to log (error)</ToolTip>
+					<Default>message</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp"><![CDATA[CustomDebug.LogError("$msg$");$end$]]></Code>
+		</Snippet>
+	</CodeSnippet>
+
+</CodeSnippets>
