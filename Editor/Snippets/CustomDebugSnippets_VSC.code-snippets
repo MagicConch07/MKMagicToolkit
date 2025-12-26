@@ -9,21 +9,21 @@
 	"MKMagicToolkit: CustomDebug.Log (clog/cl)": {
 		"scope": "csharp",
 		"prefix": ["clog", "cl"],
-		"body": ["CustomDebug.Log(\"${1:message}\");$0"],
-		"description": "Insert CustomDebug.Log(\"message\");"
+		"body": ["CustomDebug.Log(${1:message});$0"],
+		"description": "Insert CustomDebug.Log(message);"
 	},
 
 	"MKMagicToolkit: CustomDebug.LogWarning (clogw/clw)": {
 		"scope": "csharp",
 		"prefix": ["clogw", "clw"],
-		"body": ["CustomDebug.LogWarning(\"${1:message}\");$0"],
-		"description": "Insert CustomDebug.LogWarning(\"message\");"
+		"body": ["CustomDebug.LogWarning(${1:message});$0"],
+		"description": "Insert CustomDebug.LogWarning(message);"
 	},
 
 	"MKMagicToolkit: CustomDebug.LogError (cloge/cle)": {
 		"scope": "csharp",
 		"prefix": ["cloge", "cle"],
-		"body": ["CustomDebug.LogError(\"${1:message}\");$0"],
-		"description": "Insert CustomDebug.LogError(\"message\");"
+		"body": ["CustomDebug.LogError(${1:message});$0"],
+		"description": "Insert CustomDebug.LogError(message);"
 	}
 }
