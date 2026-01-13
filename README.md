@@ -1,6 +1,6 @@
 # MKMagicToolkit
 
-커스텀 툴 킷 입니다.
+커스텀 툴킷 입니다.
 1. CustomDebug
 2. MonoSingleton
 
