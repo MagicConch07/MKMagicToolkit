@@ -1,8 +1,7 @@
 using UnityEngine;
 
-namespace TurnOnTheLight.Utility
+namespace MKMagicToolkit.Utility
 {
-    // TODO : Mk Magic Tool kit 으로 빼기
     public class MonoSingleton<T> : MonoBehaviour where T : Component
     {
         protected static T _instance;
@@ -64,7 +63,7 @@ namespace TurnOnTheLight.Utility
             }
             else
             {
-                Destroy(this.gameObject);
+                DestroyImmediate(this.gameObject);
             }
         }
     }
