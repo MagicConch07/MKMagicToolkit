@@ -57,7 +57,9 @@ namespace MKMagicToolkit.Utility
                 _instance = this as T;
 
                 if (transform.parent != null)
+                {
                     transform.SetParent(null);
+                }
 
                 DontDestroyOnLoad(this.gameObject);
             }

@@ -34,11 +34,13 @@ namespace MKMagicToolkit.Editors
         [MenuItem("MKMagicToolkit/Snippet Installer")]
         public static void Open()
         {
+            
             GetWindow<MKMagicToolkitVscUserSnippetInstaller>("Custom Debug Snippets");
         }
 
         private void OnEnable()
         {
+            
             if (string.IsNullOrEmpty(_userSnippetsDir))
             {
                 _userSnippetsDir = (_selectedIde == EIdeType.VisualStudio)
